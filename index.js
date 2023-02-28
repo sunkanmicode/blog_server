@@ -9,6 +9,10 @@ const authRoute = require("./routes/auth");
 dotenv.config();
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Blog api server started....");
+});
+
 app.use("/api/auth", authRoute);
 
 mongoose.set("strictQuery", false);
